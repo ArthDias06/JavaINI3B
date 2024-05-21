@@ -3,7 +3,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import rh.ValidacaoException;
 
-public class Servico implements Validacao{
+public class ValidacaoPercentualReajuste implements Validacao{
     @Override
     public void validar(BigDecimal aumento, Funcionario f) {
 	BigDecimal percentualReajuste = aumento.divide(f.getSalario(), RoundingMode.HALF_UP);
