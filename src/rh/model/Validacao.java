@@ -3,5 +3,5 @@ package rh.model;
 import java.math.BigDecimal;
 
 public interface Validacao {
-    void validar(BigDecimal aumento, Funcionario f);
+    void validar(BigDecimal aumento, Funcionario funcionario);
 }

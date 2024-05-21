@@ -10,9 +10,9 @@ public class ReajusteService {
         this.validacoes = validacoes;
     }
     
-    public void reajustarSalarioDoFuncionario(Funcionario f, BigDecimal salario){
-        this.validacoes.forEach(v -> v.validar(salario, f));
-        BigDecimal salarioReajustado = f.getSalario().add(salario);
-        f.atualizarSalario(salarioReajustado);
+    public void reajustarSalarioDoFuncionario(Funcionario funcionario, BigDecimal aumento){
+        this.validacoes.forEach(v -> v.validar(aumento, funcionario));
+        BigDecimal salarioReajustado = funcionario.getSalario().add(aumento);
+        funcionario.atualizarSalario(salarioReajustado);
     }
 }
