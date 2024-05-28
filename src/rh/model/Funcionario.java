@@ -5,56 +5,41 @@ import java.time.LocalDate;
 
 public class Funcionario {
 
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
+	private DadosPessoais dadosPessoais;
 	private LocalDate dataUltimoReajuste;
 
 	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+            this.dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario);
+            this.dataUltimoReajuste = LocalDate.now();
 	}
-
-        //AHHHHHHHH
+        
+        public void atualizarSalario(BigDecimal novoSalario) {
+            this.dadosPessoais.setSalario(novoSalario);
+            this.dataUltimoReajuste = LocalDate.now();
+	}
+        
+        public void promover(Cargo novoCargo){
+            this.dadosPessoais.setCargo(novoCargo);
+        }
         
 	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+            return this.dadosPessoais.getNome();
 	}
 
 	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+            return this.dadosPessoais.getCpf();
 	}
 
 	public Cargo getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
+            return this.dadosPessoais.getCargo();
 	}
 
 	public BigDecimal getSalario() {
-		return salario;
-	}
-
-	public void atualizarSalario(BigDecimal salario) {
-		this.salario = salario;
-                this.dataUltimoReajuste = LocalDate.now();
+            return this.dadosPessoais.getSalario();
 	}
 
 	public LocalDate getDataUltimoReajuste() {
-		return dataUltimoReajuste;
+            return dataUltimoReajuste;
 	}
 
 }

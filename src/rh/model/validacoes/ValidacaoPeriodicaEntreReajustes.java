@@ -1,9 +1,10 @@
-package rh.model;
+package rh.model.validacoes;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import rh.ValidacaoException;
+import rh.model.Funcionario;
 
 public class ValidacaoPeriodicaEntreReajustes implements Validacao {
     @Override

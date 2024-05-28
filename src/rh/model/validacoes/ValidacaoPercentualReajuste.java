@@ -1,7 +1,8 @@
-package rh.model;
+package rh.model.validacoes;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import rh.ValidacaoException;
+import rh.model.Funcionario;
 
 public class ValidacaoPercentualReajuste implements Validacao{
     @Override
